@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Avaliação Acadêmica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <header>
+      <h1>Sistema Acadêmico</h1>
+      <p>Cadastre o aluno e suas notas para obter a média e a situação final.</p>
+    </header>
+
+    <form id="form-aluno" novalidate>
+      <div class="campo">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" placeholder="Ex: Ana Silva">
+      </div>
+
+      <div class="campo">
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" placeholder="Ex: 17">
+      </div>
+
+      <div class="grupo-notas">
+        <div class="campo">
+          <label for="nota1">1ª Nota:</label>
+          <input type="number" id="nota1" step="0.1" min="0" max="10" placeholder="0 - 10">
+        </div>
+
+        <div class="campo">
+          <label for="nota2">2ª Nota:</label>
+          <input type="number" id="nota2" step="0.1" min="0" max="10" placeholder="0 - 10">
+        </div>
+
+        <div class="campo">
+          <label for="nota3">3ª Nota:</label>
+          <input type="number" id="nota3" step="0.1" min="0" max="10" placeholder="0 - 10">
+        </div>
+      </div>
+
+      <div class="botoes">
+        <button type="submit" id="btn-calcular" class="btn btn-primary">Calcular Média</button>
+        <button type="button" id="btn-limpar" class="btn btn-secondary">Limpar Campos</button>
+      </div>
+    </form>
+
+  
+    <div id="mensagem-erro" class="mensagem-erro oculta"></div>
+
+  
+    <section id="area-resultado" class="painel-resultado oculta">
+      <h2>Resultado Acadêmico</h2>
+      
+      <div class="card-resultado">
+        <p><strong>Aluno(a):</strong> <span id="res-nome"></span></p>
+        <p><strong>Idade:</strong> <span id="res-idade"></span> anos</p>
+        <p><strong>Notas:</strong> <span id="res-notas"></span></p>
+        <p><strong>Média Final:</strong> <span id="res-media"></span></p>
+        <p><strong>Situação:</strong> <span id="res-situacao" class="badge"></span></p>
+        
+        
+        <hr>
+        <p class="detalhe-extra"><strong>Maior Nota:</strong> <span id="res-maior-nota"></span> | <strong>Menor Nota:</strong> <span id="res-menor-nota"></span></p>
+        <p class="detalhe-extra" id="res-pontos-info"></p>
+        <p id="res-mensagem-custom" class="mensagem-personalizada"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
